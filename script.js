@@ -1,4 +1,6 @@
-let computerScore, humanScore = 0;
+let rounds = 5;
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice(){
   // get random int between 1 and 3
@@ -18,6 +20,8 @@ function getHumanChoice(){
 function playRound(humanChoice, computerChoice){
   if (humanChoice == computerChoice){
     console.log("Draw!");
+    humanScore++;
+    computerScore++;
     return;
   }
   switch (humanChoice){
@@ -60,4 +64,16 @@ function printResult(won, humanChoice, computerChoice){
   return;
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+function finalResult(humanScore, computerScore){
+  if (humanScore > computerScore)
+    console.log(`You win with a score of ${humanScore} to ${computerScore}!`);
+  else if (humanScore < computerScore)
+    console.log(`You lose with a score of ${humanScore} to ${computerScore}!`);
+  else
+    console.log(`You draw with a score of ${humanScore} to ${computerScore}!`);
+}
+
+for (; rounds > 0; rounds--)
+  playRound(getHumanChoice(), getComputerChoice());
+
+finalResult(humanScore, computerScore);
