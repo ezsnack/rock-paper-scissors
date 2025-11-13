@@ -73,7 +73,10 @@ function finalResult(humanScore, computerScore){
     console.log(`You draw with a score of ${humanScore} to ${computerScore}!`);
 }
 
-for (; rounds > 0; rounds--)
-  playRound(getHumanChoice(), getComputerChoice());
+function playGame(rounds){
+  for (; rounds > 0; rounds--)
+    playRound(getHumanChoice(), getComputerChoice());
+  finalResult(humanScore, computerScore);
+}
 
-finalResult(humanScore, computerScore);
+playGame(rounds);
