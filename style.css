@@ -1,0 +1,19 @@
+#choice-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.last-result,
+.score,
+.final-result {
+  text-align: center;
+}
+
+.last-result {
+  background-color: grey;
+}
+
+button {
+  background-color: darkgrey;
+}
