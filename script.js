@@ -8,11 +8,13 @@ let score = document.createElement("div");
 let finalResult = document.createElement("div"); // only appended when a game is over
 lastResult.classList.add("last-result");
 score.classList.add("score");
-choices.addEventListener("click", (event) => playRound(event.target.id, getComputerChoice()));
+for (let choice of choices.children) {
+  choice.addEventListener("click", (event) => playRound(event.target.id, getComputerChoice()));
+}
 
 function initializeGame(){
   console.log("Initializing a new game");
-  for (let element of choices.children) element.disabled = false;
+  for (let choice of choices.children) choice.disabled = false;
   document.body.appendChild(lastResult);
   document.body.appendChild(score);
   humanScore = 0;
@@ -106,7 +108,7 @@ function checkForWinner(humanScore, computerScore){
 }
 
 function stopRound(){
-  for (let element of choices.children) element.disabled = true;
+  for (let choice of choices.children) choice.disabled = true;
   lastResult.textContent = "";
   //add option to play again
   const playAgain = document.createElement("button");
