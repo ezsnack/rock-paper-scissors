@@ -1,6 +1,10 @@
+* {
+  margin: 24px;
+}
+
 #choice-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
@@ -15,5 +19,6 @@
 }
 
 button {
+  margin: 0;
   background-color: darkgrey;
 }
