@@ -17,6 +17,7 @@ function initializeGame(){
   document.body.appendChild(score);
   humanScore = 0;
   computerScore = 0;
+  score.style.color = "black";
   score.textContent = `YOU ${humanScore} - ${computerScore} CPU`;
   lastResult.textContent = "";
 }
